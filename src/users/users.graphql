@@ -1,0 +1,22 @@
+type User {
+  name: String
+  chat: [Chat]
+}
+
+type Chat {
+  id: Int
+  content: String
+}
+
+input CreateUsersChat {
+  name: String
+  chatContent: String
+}
+
+type Query {
+  getUsersChat: [User]
+}
+
+type Mutation {
+  CreateUsersChat(createUsersChat: CreateUsersChat!): Chat!
+}
